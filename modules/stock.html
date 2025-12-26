@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>H.S.P.S.</h2>
+        <a class="active">Stock Prediction</a>
+        <a>News Sentiment</a>
+        <a>Explainability</a>
+        <a>Historical Comparison</a>
+        <a>Smart Alerts</a>
+        <a>User Dashboard</a>
+        <a>About System</a>
+        <a style="color:#f87171">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Topbar -->
+        <div class="topbar">
+            <h2>Stock Prediction</h2>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <span id="time"></span>
+                <select>
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>Tamil</option>
+                    <option>Telugu</option>
+                    <option>Kannada</option>
+                    <option>Malayalam</option>
+                    <option>Marathi</option>
+                    <option>Gujarati</option>
+                    <option>Bengali</option>
+                    <option>Punjabi</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+            <input placeholder="Enter Stock Symbol (e.g., AAPL, RELIANCE.NS)">
+            <select>
+                <option>India</option>
+                <option>USA</option>
+                <option>Europe</option>
+                <option>UK</option>
+                <option>Japan</option>
+            </select>
+            <button>Get Prediction</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Asia/Kolkata' };
+    document.getElementById('time').textContent = now.toLocaleTimeString('en-IN', options) + " (IST)";
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+
+</body>
+</html>
